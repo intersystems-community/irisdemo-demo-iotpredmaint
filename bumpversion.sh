@@ -63,8 +63,8 @@ if [ -f VERSION ]; then
     # belonging to this repository. References to other images such as Spark and Zeppelin 
     # will be let alone.
     #
-    sed -E -i '' "s;(intersystemsdc/irisdemo-demo-iotpredmaint:.+)-version-[0-9][0-9.]*;\1-version-$INPUT_STRING;g" ./docker-compose.yml
-    # sed -E -i '' "s;(intersystemsdc/irisdemo-demo-iotpredmaint:.+)-version-[0-9][0-9.]*;\1-version-$INPUT_STRING;g" ./README.md
+    sed -E -i '' "s;(intersystemsdc/irisdemo-demo-iotpredmaint:.+-version)-[0-9][0-9.]*;\1-$INPUT_STRING;g" ./docker-compose.yml
+    # sed -E -i '' "s;(intersystemsdc/irisdemo-demo-iotpredmaint:.+-version)-[0-9][0-9.]*;\1-$INPUT_STRING;g" ./README.md
 
     echo "## $INPUT_STRING ($NOW)" > tmpfile
     git log --pretty=format:"  - %s" "v$BASE_STRING"...HEAD >> tmpfile
