@@ -3,7 +3,7 @@ FROM intersystemsdc/irisdemo-base-irisdb-community:version-1.2
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 # Name of the project folder ex.: my-atelier-project
-ARG IRIS_PROJECT_FOLDER_NAME=archivedb-atelier-project
+ARG IRIS_PROJECT_FOLDER_NAME=src
 
 # Adding source code that will be loaded by the installer
 ADD --chown=irisowner:irisuser ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR

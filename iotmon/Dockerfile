@@ -1,6 +1,8 @@
-FROM intersystemsdc/irisdemo-base-irisint-community:version-1.9.0
+FROM intersystemsdc/irisdemo-base-irisint-community:version-1.4
 
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
+
+ARG IRIS_PROJECT_FOLDER_NAME=src
 
 # Adding source code that will be loaded by the installer
 ADD --chown=irisowner:irisuser ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR
